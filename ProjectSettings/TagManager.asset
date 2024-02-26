@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TopBackground
   - GameOver
+  - Enemy
   layers:
   - Default
   - TransparentFX

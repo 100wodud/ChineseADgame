@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject Gameover;
     public float bulletSpeed;
+    public int dmg;
     private void Update()
     {
         Vector3 curPos = transform.position;
