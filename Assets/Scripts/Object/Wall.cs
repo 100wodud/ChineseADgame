@@ -11,7 +11,7 @@ public class Wall : MonoBehaviour
         Vector3 curPos = transform.position;
         Vector3 nextPos = Vector3.down * 3 * Time.deltaTime;
         transform.position = curPos + nextPos;
-        if(transform.position.x < -20f)
+        if(transform.position.y < -25f)
         {
             gameObject.SetActive(false);
         }

@@ -13,7 +13,7 @@ public class Background : MonoBehaviour
 
     private void Awake()
     {
-        viewHeigjt = Camera.main.orthographicSize* 2f;
+        viewHeigjt = Camera.main.orthographicSize* 2.0f;
     }
 
     void Update()

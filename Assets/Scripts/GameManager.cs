@@ -33,12 +33,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); //두개 이상이니 삭제
             return;
         }
-        I = this; 
+        I = this;
 
     }
     void Update()
     {
         curSpawnDelay += Time.deltaTime;
+        Score += Time.deltaTime * 10;
+        scoreText.text = Score.ToString("N1");
 
 
 
@@ -49,17 +51,17 @@ public class GameManager : MonoBehaviour
             curSpawnDelay = 0f;
         }
 
-        if((int)Score / 100 > level)
+        if ((int)Score / 100 > level)
         {
             level = (int)Score / 100;
             InvokeRepeating("SpawnBullet", 5f, level);
             spawnDelay -= 0.5f;
 
-            if(spawnDelay < 1.5f)
+            if (spawnDelay < 1.5f)
             {
                 spawnDelay = 1.5f;
             }
-        } 
+        }
 
     }
 
@@ -75,7 +77,7 @@ public class GameManager : MonoBehaviour
     void SpawnBullet()
     {
         float randX = 20f;
-        float randY = Random.Range(-4 , 4);
+        float randY = Random.Range(-4, 4);
         transform.position = new Vector3(randX, randY, 0);
         GameObject wall = objectManager.MakeObj(Bullet);
         wall.transform.position = transform.position;
