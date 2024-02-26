@@ -38,7 +38,7 @@ public class ObjectManager : MonoBehaviour
             WallT[i] = Instantiate(WallTPrefab);
             WallT[i].SetActive(false);
         }
-        for ( int i = 0; i < Bullet.Length; i++)
+        for (int i = 0; i < Bullet.Length; i++)
         {
             Bullet[i] = Instantiate(BulletPrefab);
             Bullet[i].SetActive(false);
@@ -47,7 +47,7 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject MakeObj(string type)
     {
-        switch(type)
+        switch (type)
         {
             case "WallT":
                 targetPool = WallT;
