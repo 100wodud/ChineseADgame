@@ -10,9 +10,9 @@ public class StageProgress : MonoBehaviour
 
     public GameObject test;
 
-    private float time_loading = 10;
-    private float time_current;
-    private float time_start;
+    private float tLoading = 10;
+    private float tCurrent;
+    private float tStart;
 
     private int time_Spawn = 0;
 
@@ -21,34 +21,36 @@ public class StageProgress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time_current = time_loading;
-        time_start = Time.time;
+        tCurrent = tLoading;
+        tStart = Time.time;
         FillAmount(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Check_Loading();
-        if (time_Spawn < (int)(time_current / time_loading * 5f))
+        Loading();
+        if (time_Spawn < (int)(tCurrent / tLoading * 5f))
         {
             float randX = Random.Range(-4, 4);
             GameObject tests = Instantiate(test);
             tests.transform.position = new Vector3(randX, 10, 0);
-            time_Spawn = (int)(time_current / time_loading * 5f);
-        } else
+            time_Spawn = (int)(tCurrent / tLoading * 5f);
+        } 
+
+    }
+    private void Loading()
+    {
+        tCurrent = (Time.time - tStart) / 5.0f;
+        if (tCurrent < tLoading)
+        {
+            FillAmount(tCurrent / tLoading);
+        }
+        else
         {
             FillAmount(1);
             Debug.Log("보스등장");
-        }
-
-    }
-    private void Check_Loading()
-    {
-        time_current = (Time.time - time_start) / 5.0f;
-        if (time_current < time_loading)
-        {
-            FillAmount(time_current / time_loading);
+            Time.timeScale = 0f;
         }
     }
     private void FillAmount(float _value)
