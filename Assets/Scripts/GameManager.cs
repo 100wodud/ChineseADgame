@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    public GameObject[] enemyObjs;
+
 
     void Awake()
     {
@@ -42,12 +44,11 @@ public class GameManager : MonoBehaviour
         Score += Time.deltaTime * 10;
         scoreText.text = Score.ToString("N1");
 
-
-
         if (curSpawnDelay > maxSpawnDelay)
         {
             SpawnCollider();
-            maxSpawnDelay = Random.Range(0.5f, spawnDelay);
+            SpawnEnemy();
+            maxSpawnDelay = Random.Range(0.5f, 3f);
             curSpawnDelay = 0f;
         }
 
@@ -81,7 +82,12 @@ public class GameManager : MonoBehaviour
         transform.position = new Vector3(randX, randY, 0);
         GameObject wall = objectManager.MakeObj(Bullet);
         wall.transform.position = transform.position;
+    }
 
-
+    void SpawnEnemy()
+    {
+        int ranEnemy = Random.Range(0, 3);
+        int ranPoint = Random.Range(0, 5);
+        Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
     }
 }
