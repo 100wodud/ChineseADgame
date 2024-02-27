@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] enemyObjs;
 
+    public GameObject player;
+
 
     void Awake()
     {
@@ -88,6 +90,10 @@ public class GameManager : MonoBehaviour
     {
         int ranEnemy = Random.Range(0, 3);
         int ranPoint = Random.Range(0, 5);
-        Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+        GameObject enemy = Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+
+        Rigidbody2D rigid = enemy.GetComponent<Rigidbody2D>();
+        Enemy enemyLogic = enemy.GetComponent<Enemy>();
+        enemyLogic.player = player;
     }
 }

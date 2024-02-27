@@ -1778,6 +1778,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1830194683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3121171219287593516, guid: cf62c5b8b5fe859409011566c45e6cb6, type: 3}
+  m_PrefabInstance: {fileID: 1938539263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1895404424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,6 +1975,7 @@ MonoBehaviour:
   - {fileID: 166686826}
   - {fileID: 901416826}
   - {fileID: 1195705582}
+  player: {fileID: 1830194683}
 --- !u!4 &2087635748
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,6 +2108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy S
       objectReference: {fileID: 0}
+    - target: {fileID: 5169765323863256677, guid: fe8e0fba7beec9a479fa048f533c0d21, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1830194683}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2163,6 +2173,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5716592907062588132, guid: fd08c82328f191244aa3ba3c7c2395bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1830194683}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
