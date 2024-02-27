@@ -46,23 +46,23 @@ public class GameManager : MonoBehaviour
 
         if (curSpawnDelay > maxSpawnDelay)
         {
-            SpawnCollider();
+            //SpawnCollider();
             SpawnEnemy();
             maxSpawnDelay = Random.Range(0.5f, 3f);
             curSpawnDelay = 0f;
         }
 
-        if ((int)Score / 100 > level)
-        {
-            level = (int)Score / 100;
-            InvokeRepeating("SpawnBullet", 5f, level);
-            spawnDelay -= 0.5f;
+        //if ((int)Score / 100 > level)
+        //{
+        //    level = (int)Score / 100;
+        //    InvokeRepeating("SpawnBullet", 5f, level);
+        //    spawnDelay -= 0.5f;
 
-            if (spawnDelay < 1.5f)
-            {
-                spawnDelay = 1.5f;
-            }
-        }
+        //    if (spawnDelay < 1.5f)
+        //    {
+        //        spawnDelay = 1.5f;
+        //    }
+        //}
 
     }
 
