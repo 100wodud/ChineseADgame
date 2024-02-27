@@ -6,12 +6,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerController _controller;
+    private CharacterStatsHandler _stats;
 
     private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
 
     private void Awake()
     {
+        _stats = GetComponent<CharacterStatsHandler>();
         _controller = GetComponent<PlayerController>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyMovement(Vector2 direction)
     {
-        direction = direction * 1.5f;
+        direction = direction * _stats.CurrentStates.speed;
 
         _rigidbody.velocity = direction;
     }
