@@ -23,7 +23,7 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackTime: 0
   bulletNameTag: Bullet
-  duration: 50
+  duration: 5
   spread: 0
   numberofProjectilesPerShot: 0
   multipleProjectilesAngel: 1
