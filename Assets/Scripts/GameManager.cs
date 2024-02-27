@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
+    public float itemSpawnDelay;
     public float spawnDelay;
 
     int level = 0;
@@ -25,7 +26,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] enemyObjs;
 
+    public GameObject[] itemObjs;
+
+
     public GameObject player;
+
 
 
     void Awake()
@@ -43,6 +48,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         curSpawnDelay += Time.deltaTime;
+        itemSpawnDelay += Time.deltaTime;
         Score += Time.deltaTime * 10;
         scoreText.text = Score.ToString("N1");
 
@@ -50,50 +56,66 @@ public class GameManager : MonoBehaviour
         {
             //SpawnCollider();
             SpawnEnemy();
+
             maxSpawnDelay = Random.Range(0.5f, 3f);
             curSpawnDelay = 0f;
         }
 
-        //if ((int)Score / 100 > level)
-        //{
-        //    level = (int)Score / 100;
-        //    InvokeRepeating("SpawnBullet", 5f, level);
-        //    spawnDelay -= 0.5f;
+        if (itemSpawnDelay > maxSpawnDelay + 5)
+        {
+            SpawnItem();
+            itemSpawnDelay = 0f;
+        }
 
-        //    if (spawnDelay < 1.5f)
-        //    {
-        //        spawnDelay = 1.5f;
-        //    }
-        //}
+        if ((int)Score / 100 > level)
+        {
+            level = (int)Score / 100;
+            InvokeRepeating("SpawnBullet", 5f, level);
+            spawnDelay -= 0.5f;
 
-    }
+        }
 
-    void SpawnCollider()
-    {
-        int ranCollider = Random.Range(0, 2);
-        int ranPoint = Random.Range(0, 5);
+        void SpawnCollider()
+        {
+            int ranCollider = Random.Range(0, 2);
+            int ranPoint = Random.Range(0, 5);
 
-        GameObject wall = objectManager.MakeObj(colliderObjs[ranCollider]);
-        wall.transform.position = spawnPoints[ranPoint].position;
-    }
+            GameObject wall = objectManager.MakeObj(colliderObjs[ranCollider]);
+            wall.transform.position = spawnPoints[ranPoint].position;
+        }
 
-    void SpawnBullet()
-    {
-        float randX = 20f;
-        float randY = Random.Range(-4, 4);
-        transform.position = new Vector3(randX, randY, 0);
-        GameObject wall = objectManager.MakeObj(Bullet);
-        wall.transform.position = transform.position;
-    }
+        void SpawnBullet()
+        {
+            float randX = 20f;
+            float randY = Random.Range(-4, 4);
+            transform.position = new Vector3(randX, randY, 0);
+            GameObject wall = objectManager.MakeObj(Bullet);
+            wall.transform.position = transform.position;
+        }
 
-    void SpawnEnemy()
-    {
-        int ranEnemy = Random.Range(0, 3);
-        int ranPoint = Random.Range(0, 5);
-        GameObject enemy = Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+        void SpawnEnemy()
+        {
+            int ranEnemy = Random.Range(0, 3);
+            int ranPoint = Random.Range(0, 5);
+            GameObject enemy = Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
 
-        Rigidbody2D rigid = enemy.GetComponent<Rigidbody2D>();
-        Enemy enemyLogic = enemy.GetComponent<Enemy>();
-        enemyLogic.player = player;
+            Rigidbody2D rigid = enemy.GetComponent<Rigidbody2D>();
+            Enemy enemyLogic = enemy.GetComponent<Enemy>();
+            enemyLogic.player = player;
+        }
+
+        void SpawnItem()
+        {
+            int ranItem = Random.Range(0, 3);
+            int ranItem2 = Random.Range(0, 3);
+            int ranItem3 = Random.Range(0, 3);
+
+
+            Vector3 secondItemPosition = spawnPoints[1].position + new Vector3(2f, 0f, 0f);
+            Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
+            Vector3 thirdItemPosition = spawnPoints[1].position + new Vector3(-2f, 0f, 0f);
+            Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
+        }
+
     }
 }
