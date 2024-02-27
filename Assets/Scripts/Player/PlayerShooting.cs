@@ -11,12 +11,21 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("OnShoot", 0f, 0.5f);
+        Attack();
     }
 
-    private void OnShoot()
+    void Attack()
     {
-        CreateProjectile();
+        StartCoroutine("OnShoot");
+    }
+
+    IEnumerator OnShoot()
+    {
+        while (true)
+        {
+            CreateProjectile();
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     private void CreateProjectile()
