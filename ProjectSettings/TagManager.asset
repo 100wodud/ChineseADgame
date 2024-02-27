@@ -7,7 +7,8 @@ TagManager:
   - TopBackground
   - GameOver
   - Enemy
-  - Mute
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
