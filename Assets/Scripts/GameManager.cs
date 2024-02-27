@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
+    public float itemSpawnDelay;
     public float spawnDelay;
 
     int level = 0;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     public GameObject[] enemyObjs;
-
+    public GameObject[] itemObjs;
 
     void Awake()
     {
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         curSpawnDelay += Time.deltaTime;
+        itemSpawnDelay += Time.deltaTime;
         Score += Time.deltaTime * 10;
         scoreText.text = Score.ToString("N1");
 
@@ -48,10 +50,16 @@ public class GameManager : MonoBehaviour
         {
             SpawnCollider();
             SpawnEnemy();
+
             maxSpawnDelay = Random.Range(0.5f, 3f);
             curSpawnDelay = 0f;
         }
-
+        if(itemSpawnDelay > maxSpawnDelay +5 )
+        {
+            SpawnItem();
+            itemSpawnDelay = 0f;
+        }
+        
         if ((int)Score / 100 > level)
         {
             level = (int)Score / 100;
@@ -90,4 +98,18 @@ public class GameManager : MonoBehaviour
         int ranPoint = Random.Range(0, 5);
         Instantiate(enemyObjs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
     }
+
+    void SpawnItem()
+    {
+        int ranItem = Random.Range(0, 3);
+        int ranItem2 = Random.Range(0, 3);
+        int ranItem3 = Random.Range(0, 3);
+   
+
+        Vector3 secondItemPosition = spawnPoints[1].position + new Vector3(2f, 0f, 0f);
+        Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
+        Vector3 thirdItemPosition = spawnPoints[1].position + new Vector3(-2f, 0f, 0f);
+        Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
+    }
+
 }

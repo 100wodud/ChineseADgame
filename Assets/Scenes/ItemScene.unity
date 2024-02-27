@@ -1947,11 +1947,19 @@ MonoBehaviour:
   - {fileID: 1869489305}
   maxSpawnDelay: 5
   curSpawnDelay: 0
+  itemSpawnDelay: 0
   spawnDelay: 10
   Score: 0
   objectManager: {fileID: 1895404425}
   scoreText: {fileID: 274801189}
-  enemyObjs: []
+  enemyObjs:
+  - {fileID: 890072518821175215, guid: fd08c82328f191244aa3ba3c7c2395bf, type: 3}
+  - {fileID: 8125844000764328524, guid: c1b1d6f6b6bef3049ab1cf0da93155ca, type: 3}
+  - {fileID: 4314977326700057630, guid: fe8e0fba7beec9a479fa048f533c0d21, type: 3}
+  itemObjs:
+  - {fileID: 2392331234474735120, guid: e4611fdb994c2494db5b92999e252f1e, type: 3}
+  - {fileID: 5299924868225770531, guid: 5e6b6b5022885af449a325c6f52cda4f, type: 3}
+  - {fileID: 1564480609492107825, guid: 2ebf4f29935cb0d459b1e72622917de1, type: 3}
 --- !u!4 &2087635748
 Transform:
   m_ObjectHideFlags: 0

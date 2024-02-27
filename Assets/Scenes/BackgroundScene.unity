@@ -1951,7 +1951,10 @@ MonoBehaviour:
   Score: 0
   objectManager: {fileID: 1895404425}
   scoreText: {fileID: 274801189}
-  enemyObjs: []
+  enemyObjs:
+  - {fileID: 890072518821175215, guid: fd08c82328f191244aa3ba3c7c2395bf, type: 3}
+  - {fileID: 8125844000764328524, guid: c1b1d6f6b6bef3049ab1cf0da93155ca, type: 3}
+  - {fileID: 4314977326700057630, guid: fe8e0fba7beec9a479fa048f533c0d21, type: 3}
 --- !u!4 &2087635748
 Transform:
   m_ObjectHideFlags: 0
