@@ -25,6 +25,6 @@ MonoBehaviour:
   bulletNameTag: Bullet
   duration: 5
   spread: 0
-  numberofProjectilesPerShot: 0
+  numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 1
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
