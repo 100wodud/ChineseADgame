@@ -8,6 +8,7 @@ TagManager:
   - GameOver
   - Enemy
   - Mute
+  - Item
   layers:
   - Default
   - TransparentFX
