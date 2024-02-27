@@ -7,25 +7,19 @@ public class ObjectManager : MonoBehaviour
     public GameObject WallTPrefab;
     public GameObject WallBPrefab;
 
-    public GameObject BulletPrefab;
-
     GameObject[] WallT;
     GameObject[] WallB;
 
-    GameObject[] Bullet;
-
     GameObject[] targetPool;
 
+    /*
     void Awake()
     {
         WallT = new GameObject[10];
         WallB = new GameObject[10];
 
-        Bullet = new GameObject[100];
-
         Generate();
     }
-
     void Generate()
     {
         for (int i = 0; i < WallB.Length; i++)
@@ -38,12 +32,8 @@ public class ObjectManager : MonoBehaviour
             WallT[i] = Instantiate(WallTPrefab);
             WallT[i].SetActive(false);
         }
-        for (int i = 0; i < Bullet.Length; i++)
-        {
-            Bullet[i] = Instantiate(BulletPrefab);
-            Bullet[i].SetActive(false);
-        }
     }
+    */
 
     public GameObject MakeObj(string type)
     {
@@ -54,9 +44,6 @@ public class ObjectManager : MonoBehaviour
                 break;
             case "WallB":
                 targetPool = WallB;
-                break;
-            case "Bullet":
-                targetPool = Bullet;
                 break;
         }
 
