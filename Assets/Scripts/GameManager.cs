@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        colliderObjs = new string[] { "WallT", "WallB" };
-        Bullet = "Bullet";
         if (I != null) //이미 존재하면
         {
             Destroy(gameObject); //두개 이상이니 삭제
@@ -111,9 +109,9 @@ public class GameManager : MonoBehaviour
             int ranItem3 = Random.Range(0, 3);
 
 
-            Vector3 secondItemPosition = spawnPoints[1].position + new Vector3(2f, 0f, 0f);
+            Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2f, 0f, 0f);
             Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
-            Vector3 thirdItemPosition = spawnPoints[1].position + new Vector3(-2f, 0f, 0f);
+            Vector3 thirdItemPosition = spawnPoints[0].position + new Vector3(-2f, 0f, 0f);
             Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
         }
 
