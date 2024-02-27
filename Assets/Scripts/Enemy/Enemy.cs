@@ -24,12 +24,12 @@ public class Enemy : MonoBehaviour
         spriteRenderer.sprite = sprites[1];
         Invoke("ReturnSprite", 0.1f);
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
     }
-    
+
     void ReturnSprite()
     {
         spriteRenderer.sprite = sprites[0];
@@ -39,7 +39,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "BorderBullet")
             Destroy(gameObject);
-        else if (collision.gameObject.tag == "PlayerBullet") {
+        else if (collision.gameObject.tag == "PlayerBullet")
+        {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             OnHit(bullet.dmg);
 

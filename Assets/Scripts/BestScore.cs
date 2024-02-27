@@ -16,7 +16,8 @@ public class BestScore : MonoBehaviour
         {
             DataManager.I.bestScore = GameManager.I.Score;
             bestRecord.SetActive(true);
-        } else
+        }
+        else
         {
             bestRecord.SetActive(false);
 

@@ -10,4 +10,9 @@ public class PlayerInputController : PlayerController
         Vector2 moveInput = value.Get<Vector2>();
         CallMoveEvent(moveInput);
     }
+
+    public void OnAttack(InputValue value)
+    {
+        IsAttacking = value.isPressed;
+    }
 }
