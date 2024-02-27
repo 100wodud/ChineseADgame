@@ -186,6 +186,6 @@ MonoBehaviour:
   - {fileID: -7844560889915226194, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   maxShotDelay: 0
   curShotDelay: 0
-  bulletObjA: {fileID: 6548206371846536784, guid: 438697a7d6322d447b906f56b5643153, type: 3}
-  bulletObjB: {fileID: 6548206371846536784, guid: 8a35b84cf2b4495448724412c2786bcc, type: 3}
+  bulletObjA: {fileID: 6548206371846536784, guid: 3a508333988783e459d4289234dfb26c, type: 3}
+  bulletObjB: {fileID: 6548206371846536784, guid: d94aa3eb5b2160e4d8d8392309b5be8e, type: 3}
   player: {fileID: 0}
