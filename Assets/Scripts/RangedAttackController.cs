@@ -45,6 +45,15 @@ public class RangedAttackController : MonoBehaviour
         {
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f);
         }
+        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-_attackData.power);
+            }
+            DestroyProjectile(collision.ClosestPoint(transform.position));
+        }
     }
 
 
