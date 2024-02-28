@@ -1,26 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PickupItem : MonoBehaviour
+public abstract class PickupItem: MonoBehaviour
 {
-    [SerializeField] private bool destroyOnPickup = true;
-    [SerializeField] private LayerMask canBePickupBy;
-    [SerializeField] private AudioClip pickupSound;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canBePickupBy.value == (canBePickupBy.value | (1 << other.gameObject.layer)))
+        if (other.CompareTag("Player"))
         {
-        
-            if (destroyOnPickup)
-            {
-                Destroy(gameObject);
-            }
+
+            Debug.Log("충돌했다!");
+            OnPickedUp(other.gameObject);
+            DestroyAllItemsWithTag("Item");
         }
     }
 
+    private void DestroyAllItemsWithTag(string tag)
+    {
+   
+        GameObject[] items = GameObject.FindGameObjectsWithTag(tag);
+
+        foreach (GameObject item in items)
+        {
+            Destroy(item);
+        }
+    }
     protected abstract void OnPickedUp(GameObject receiver);
 }
+
 
 

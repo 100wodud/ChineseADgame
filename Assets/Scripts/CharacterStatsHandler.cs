@@ -156,4 +156,9 @@ public class CharacterStatsHandler : MonoBehaviour
         LimitStats(ref CurrentStats.speed, MinSpeed);
         CurrentStats.maxHealth = Mathf.Max(CurrentStats.maxHealth, MinMaxHealth);
     }
+    public void AddStatModifier(CharacterStats statModifier)
+    {
+        statsModifiers.Add(statModifier);
+        UpdateCharacterStats();
+    }
 }
