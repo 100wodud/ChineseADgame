@@ -13,11 +13,11 @@ public class TileMapColider : MonoBehaviour
 
         if(collision.gameObject.tag == "EnemyBullet")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }
