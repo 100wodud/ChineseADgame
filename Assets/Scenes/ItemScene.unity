@@ -1326,7 +1326,9 @@ MonoBehaviour:
   itemObjs:
   - {fileID: 9072074992700940766, guid: a6080e46e1fa5e044be0dd9e01ffe4ca, type: 3}
   - {fileID: 2387125508504349273, guid: ee2eb2ecaaca7d2468e9da5f92db6524, type: 3}
-  - {fileID: 5003530198061413981, guid: 11d346847ee33ea47830d62de9f3a487, type: 3}
+  - {fileID: 5003530198061413981, guid: 87d1ab1660456124b9f142a93f8c462b, type: 3}
+  - {fileID: 4030224699774239044, guid: 982f93a2add02c2448e8908c38a7d5b6, type: 3}
+  - {fileID: 8540221200749586891, guid: 1ccba75dec56b12448c2982b9e9112f9, type: 3}
   player: {fileID: 245124599}
   spawnIndex: 0
   spawnEnd: 0

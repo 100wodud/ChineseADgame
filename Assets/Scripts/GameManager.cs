@@ -171,8 +171,8 @@ public class GameManager : MonoBehaviour
         void SpawnItem()
         {
             int ranItem = Random.Range(0, 3);
-            int ranItem2 = Random.Range(0, 3);
-            int ranItem3 = Random.Range(0, 3);
+            int ranItem2 = Random.Range(0, 5);
+            int ranItem3 = Random.Range(0, 5);
 
 
             Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2f, 0f, 0f);
