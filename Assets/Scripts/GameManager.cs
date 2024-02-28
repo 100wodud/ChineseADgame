@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
 
         if (itemSpawnDelay > nextSpawnDelay + 5)
         {
-            //SpawnItem();
+            SpawnItem();
             itemSpawnDelay = 0f;
         }
 
@@ -168,17 +168,17 @@ public class GameManager : MonoBehaviour
 
         }
 
-        //void SpawnItem()
-        //{
-        //    int ranItem = Random.Range(0, 3);
-        //    int ranItem2 = Random.Range(0, 3);
-        //    int ranItem3 = Random.Range(0, 3);
+        void SpawnItem()
+        {
+            int ranItem = Random.Range(0, 3);
+            int ranItem2 = Random.Range(0, 3);
+            int ranItem3 = Random.Range(0, 3);
 
 
-        //    Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2f, 0f, 0f);
-        //    Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
-        //    Vector3 thirdItemPosition = spawnPoints[0].position + new Vector3(-2f, 0f, 0f);
-        //    Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
-        //}
+            Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2f, 0f, 0f);
+            Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
+            Vector3 thirdItemPosition = spawnPoints[0].position + new Vector3(-2f, 0f, 0f);
+            Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
+        }
 
 }
