@@ -436,8 +436,8 @@ GameObject:
   - component: {fileID: 5058014743971733396}
   - component: {fileID: 7397265447696403189}
   - component: {fileID: 4475827032959871854}
-  - component: {fileID: 7595451098112364903}
   - component: {fileID: 6212128654777579533}
+  - component: {fileID: 6997533023362575286}
   m_Layer: 0
   m_Name: BulletCount
   m_TagString: Item
@@ -535,18 +535,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7595451098112364903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072074992700940766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42a87e8f0b88414b955df116ef064b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6212128654777579533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,3 +548,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &6997533023362575286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072074992700940766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda78bf3410431f45bf11f921d54df58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsModifier:
+  - statsChangeType: 0
+    maxHealth: 1
+    speed: 0
+    attackSO: {fileID: 11400000, guid: 69e10d55af7ac0c43a66b6b973498acc, type: 2}

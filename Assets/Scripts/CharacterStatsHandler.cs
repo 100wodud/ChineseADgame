@@ -29,4 +29,9 @@ public class CharacterStatsHandler : MonoBehaviour
         CurrentStates.speed = baseStats.speed;
 
     }
+    public void AddStatModifier(CharacterStats statModifier)
+    {
+        statsModifiers.Add(statModifier);
+        UpdateCharacterStats();
+    }
 }
