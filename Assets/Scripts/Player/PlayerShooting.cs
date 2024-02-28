@@ -23,11 +23,6 @@ public class TopDownShooting : MonoBehaviour
         _contoller.OnAttackEvent += OnShoot;
     }
 
-    private void OnAim(Vector2 newAimDirection)
-    {
-        aimPoint.position = newAimDirection;
-    }
-
     private void OnShoot(AttackSO attackSO)
     {
         RangedAttackData rangedAttackData = attackSO as RangedAttackData;

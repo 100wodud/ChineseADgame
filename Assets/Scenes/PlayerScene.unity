@@ -466,9 +466,10 @@ GameObject:
   - component: {fileID: 583686111}
   - component: {fileID: 583686115}
   - component: {fileID: 583686116}
+  - component: {fileID: 583686117}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,6 +602,51 @@ MonoBehaviour:
     speed: 5
     attackSO: {fileID: 11400000, guid: b76d5f3cc9548194389fe1532b6ced68, type: 2}
   statsModifiers: []
+--- !u!61 &583686117
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583686109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &684545279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4696332955d4ba349afc148b903bd425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testObj: {fileID: 3320537561405536895, guid: 3a508333988783e459d4289234dfb26c, type: 3}
+  testObj: {fileID: 6548206371846536784, guid: 381e654e284aa584d9f7b0ff8428c51a, type: 3}
 --- !u!1 &1292268718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTPrefab: {fileID: 8659751684110438897, guid: ecf0018d824074046aeafe5835220eb3, type: 3}
   WallBPrefab: {fileID: 8659751684110438897, guid: 17d234d1721bcd14c8962beaf0abda8d, type: 3}
-  BulletPrefab: {fileID: 6548206371846536784, guid: 438697a7d6322d447b906f56b5643153, type: 3}
 --- !u!4 &1353046214
 Transform:
   m_ObjectHideFlags: 0
@@ -1350,11 +1395,14 @@ MonoBehaviour:
   - {fileID: 46687424}
   maxSpawnDelay: 5
   curSpawnDelay: 0
+  itemSpawnDelay: 0
   spawnDelay: 10
   Score: 0
   objectManager: {fileID: 1353046213}
   scoreText: {fileID: 0}
   enemyObjs: []
+  itemObjs: []
+  player: {fileID: 0}
 --- !u!4 &1581499482
 Transform:
   m_ObjectHideFlags: 0
