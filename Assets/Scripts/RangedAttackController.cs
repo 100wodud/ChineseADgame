@@ -31,7 +31,7 @@ public class RangedAttackController : MonoBehaviour
 
         _currentDuration += Time.deltaTime;
 
-        if (_currentDuration > _attackData.duration)
+        if (_currentDuration > _attackData.duration * 0.1f)
         {
             DestroyProjectile(transform.position);
         }
@@ -80,5 +80,6 @@ public class RangedAttackController : MonoBehaviour
     private void DestroyProjectile(Vector3 position)
     {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

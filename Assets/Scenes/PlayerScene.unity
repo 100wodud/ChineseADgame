@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87068554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 583686116}
   - component: {fileID: 583686117}
   - component: {fileID: 583686118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   - component: {fileID: 945831567}
   - component: {fileID: 945831569}
   - component: {fileID: 945831568}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1006946898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1664,7 +1664,7 @@ GameObject:
   - component: {fileID: 1681865050}
   - component: {fileID: 1681865049}
   - component: {fileID: 1681865048}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CurrentHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853537776}
   - component: {fileID: 1853537777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
