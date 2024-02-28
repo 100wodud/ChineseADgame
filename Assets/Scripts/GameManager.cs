@@ -170,10 +170,18 @@ public class GameManager : MonoBehaviour
 
         void SpawnItem()
         {
-            int ranItem = Random.Range(0, 3);
-            int ranItem2 = Random.Range(0, 3);
-            int ranItem3 = Random.Range(0, 3);
+            
+            int ranItem2 = Random.Range(0, 4);
+            int ranItem3 = Random.Range(0, 4);
 
+        if (ranItem2 == ranItem3 && ranItem2 < 4)
+        {
+            ranItem3++;
+        }
+        if (ranItem2 == ranItem3 && ranItem2 == 4)
+        {
+            ranItem3--;
+        }
 
             Vector3 secondItemPosition = spawnPoints[2].position + new Vector3(2f, 0f, 0f);
             Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
@@ -181,4 +189,5 @@ public class GameManager : MonoBehaviour
             Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
         }
 
+  
 }
