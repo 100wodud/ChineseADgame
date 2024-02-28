@@ -171,14 +171,14 @@ public class GameManager : MonoBehaviour
         void SpawnItem()
         {
             
-            int ranItem2 = Random.Range(0, 5);
-            int ranItem3 = Random.Range(0, 5);
+            int ranItem2 = Random.Range(0, 4);
+            int ranItem3 = Random.Range(0, 4);
 
-        if (ranItem2 == ranItem3 && ranItem2 <= 5)
+        if (ranItem2 == ranItem3 && ranItem2 < 4)
         {
             ranItem3++;
         }
-        if (ranItem2 == ranItem3 && ranItem2 == 5)
+        if (ranItem2 == ranItem3 && ranItem2 == 4)
         {
             ranItem3--;
         }
