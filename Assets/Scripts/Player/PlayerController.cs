@@ -24,18 +24,18 @@ public class PlayerController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (Stats.CurrentStates.attackSO == null)
+        if (Stats.CurrentStats.attackSO == null)
             return;
 
-        if (_timeSinceLastAttack <= Stats.CurrentStates.attackSO.delay * 0.01f)    // TODO
+        if (_timeSinceLastAttack <= Stats.CurrentStats.attackSO.delay * 0.01f)    // TODO
         {
             _timeSinceLastAttack += Time.deltaTime;
         }
 
-        if (IsAttacking && _timeSinceLastAttack > Stats.CurrentStates.attackSO.delay * 0.01f)
+        if (IsAttacking && _timeSinceLastAttack > Stats.CurrentStats.attackSO.delay * 0.01f)
         {
             _timeSinceLastAttack = 0;
-            CallAttackEvent(Stats.CurrentStates.attackSO);
+            CallAttackEvent(Stats.CurrentStats.attackSO);
         }
     }
 
