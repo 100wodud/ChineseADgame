@@ -184,9 +184,9 @@ public class GameManager : MonoBehaviour
         }
 
 
-        Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2f, 0f, 0f);
+        Vector3 secondItemPosition = spawnPoints[0].position + new Vector3(2.5f, 0f, 0f);
             Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
-            Vector3 thirdItemPosition = spawnPoints[0].position + new Vector3(-2f, 0f, 0f);
+            Vector3 thirdItemPosition = spawnPoints[0].position + new Vector3(-2.5f, 0f, 0f);
             Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
         }
 
