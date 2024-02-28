@@ -219,6 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda78bf3410431f45bf11f921d54df58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnPickup: 1
+  canBePickupBy:
+    serializedVersion: 2
+    m_Bits: 64
   statsModifier:
   - statsChangeType: 0
     maxHealth: 1
