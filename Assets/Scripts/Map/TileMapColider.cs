@@ -9,9 +9,15 @@ public class TileMapColider : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+        }
+
+        if(collision.gameObject.tag == "EnemyBullet")
+        {
             Destroy(collision.gameObject);
-            Time.timeScale = 0f;
-            Instantiate(Gameover);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
