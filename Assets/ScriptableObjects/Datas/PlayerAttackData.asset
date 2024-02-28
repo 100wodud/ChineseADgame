@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: PlayerAttackData
   m_EditorClassIdentifier: 
   size: 1
-  delay: 50
+  delay: 40
   power: 10
   speed: 10
   target:
     serializedVersion: 2
-    m_Bits: 0
-  isOnKnockback: 0
-  knockbackPower: 0
-  knockbackTime: 0
+    m_Bits: 128
   bulletNameTag: Bullet
-  duration: 5
+  duration: 10
   spread: 0
   numberofProjectilesPerShot: 1
-  multipleProjectilesAngel: 1
+  multipleProjectilesAngle: 5
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
