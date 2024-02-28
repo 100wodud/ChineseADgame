@@ -10,6 +10,6 @@ public class RangedAttackData : AttackSO
     public float duration;
     public float spread;
     public int numberofProjectilesPerShot;
-    public float multipleProjectilesAngel;
+    public float multipleProjectilesAngle;
     public Color projectileColor;
 }

@@ -31,7 +31,7 @@ public class RangedAttackController : MonoBehaviour
 
         _currentDuration += Time.deltaTime;
 
-        if (_currentDuration > _attackData.duration)
+        if (_currentDuration > _attackData.duration * 0.1f)
         {
             DestroyProjectile(transform.position);
         }
@@ -44,6 +44,15 @@ public class RangedAttackController : MonoBehaviour
         if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f);
+        }
+        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-_attackData.power);
+            }
+            DestroyProjectile(collision.ClosestPoint(transform.position));
         }
     }
 
@@ -71,5 +80,6 @@ public class RangedAttackController : MonoBehaviour
     private void DestroyProjectile(Vector3 position)
     {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
