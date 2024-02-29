@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         spawnList = new List<Spawn>();
-        enemyObjs = new string[] { "EnemyS", "EnemyM", "EnemyL" };
+        enemyObjs = new string[] { "EnemyS", "EnemyM", "EnemyL", "EnemyB" };
         ReadSpawnFile();
         if (I != null) //이미 존재하면
         {
@@ -143,7 +143,10 @@ public class GameManager : MonoBehaviour
                 case "L":
                     enemyIndex = 2;
                     break;
-            }
+            case "B":
+                enemyIndex = 3;
+                break;
+        }
             int enemyPoint = spawnList[spawnIndex].point;
             GameObject enemy = objectManager.MakeObj(enemyObjs[enemyIndex]);
             enemy.transform.position = spawnPoints[enemyPoint].position;
