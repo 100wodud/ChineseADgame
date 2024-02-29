@@ -14,6 +14,9 @@ public class UIPanel : MonoBehaviour
     public GameObject Mute;
     public GameObject Loud;
 
+
+    public GameObject Passive;
+
     public void GamePause()
     {
         if(GameSpeed > 0f)
@@ -46,5 +49,12 @@ public class UIPanel : MonoBehaviour
             Mute.SetActive(true);
             Loud.SetActive(false);
         }
+    }
+
+    //test
+    public void TestFunction()
+    {
+        Instantiate(Passive);
+        Time.timeScale = 0f;
     }
 }
