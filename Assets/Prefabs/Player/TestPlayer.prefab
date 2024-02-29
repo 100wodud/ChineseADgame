@@ -338,7 +338,7 @@ Transform:
   m_Children:
   - {fileID: 3455485939945686836}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2521569847271320749
 MonoBehaviour:
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 100000
+    maxHealth: 100
     speed: 5
     attackSO: {fileID: 11400000, guid: b76d5f3cc9548194389fe1532b6ced68, type: 2}
   statsModifiers: []

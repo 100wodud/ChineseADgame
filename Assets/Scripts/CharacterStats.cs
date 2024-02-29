@@ -14,7 +14,7 @@ public enum StatsChangeType
 public class CharacterStats
 {
     public StatsChangeType statsChangeType;
-    [Range(0, 100000)] public int maxHealth;
+    [Range(0, 100)] public int maxHealth;
     [Range(0f, 20f)] public float speed;
     public AttackSO attackSO;
 }

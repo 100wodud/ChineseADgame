@@ -24,7 +24,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        CurrentHealth = _statsHandler.CurrentStats.maxHealth * 0.001f;
+        CurrentHealth = _statsHandler.CurrentStats.maxHealth;
         currentHealthText.text = CurrentHealth.ToString();
     }
 

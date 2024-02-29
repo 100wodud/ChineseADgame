@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 4141034952381953240}
   - component: {fileID: 6238165377612328942}
   - component: {fileID: 497371223932649376}
+  - component: {fileID: -1909102889569373168}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Item
@@ -309,6 +310,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   healValue: 10
+--- !u!114 &-1909102889569373168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387125508504349273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda78bf3410431f45bf11f921d54df58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnPickup: 1
+  canBePickupBy:
+    serializedVersion: 2
+    m_Bits: 64
+  statsModifier:
+  - statsChangeType: 0
+    maxHealth: 100
+    speed: 0
+    attackSO: {fileID: 0}
 --- !u!1 &5219157431154773696
 GameObject:
   m_ObjectHideFlags: 0
