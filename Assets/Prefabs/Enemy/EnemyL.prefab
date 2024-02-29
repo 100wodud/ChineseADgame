@@ -185,11 +185,9 @@ MonoBehaviour:
   bulletObjB: {fileID: 6548206371846536784, guid: d94aa3eb5b2160e4d8d8392309b5be8e, type: 3}
   player: {fileID: 0}
   objectManager: {fileID: 0}
-  statsModifier:
-  - statsChangeType: 0
-    maxHealth: 0
-    speed: 0
-    attackSO: {fileID: 11400000, guid: dd502b9270ddf5448b69c222b35ad97b, type: 2}
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
   CurrentHpTxt: {fileID: 6318523624567322138}
 --- !u!1 &1031282903912468750
 GameObject:
