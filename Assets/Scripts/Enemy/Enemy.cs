@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public float maxShotDelay;
     public float curShotDelay;
 
+
+    public GameObject PassiveItem;
     public GameObject bulletObjA;
     public GameObject bulletObjB;
     public GameObject player;
@@ -37,12 +39,13 @@ public class Enemy : MonoBehaviour
             anim = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         switch (enemyName)
         {
             case "B":
-                health = 2;
+                health = 11112;
+                CurrentHpTxt.text = "11112";
                 break;
             case "L":
                 health = 40;
@@ -254,12 +257,17 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("OnHit");
         }
-        spriteRenderer.sprite = sprites[1];
+        //spriteRenderer.sprite = sprites[1];
         Invoke("ReturnSprite", 0.1f);
         ChangeHealthText();
         if (health <= 0)
         {
             gameObject.SetActive(false);
+            if(enemyName == "B")
+            {
+                Instantiate(PassiveItem);
+                Time.timeScale = 0f;
+            }
             return;
         }
 

@@ -9,11 +9,13 @@ public class SceneRouter : MonoBehaviour
     public void GotoBackgroundScene()
     {
         SceneManager.LoadScene("BackgroundScene");
+        Time.timeScale = 1f;
     }
 
     public void GotoMainScene()
     {
         SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1f;
     }
 
     public void RestartScene()
