@@ -19,9 +19,11 @@ public class Enemy : MonoBehaviour
     public GameObject bulletObjB;
     public GameObject player;
     public ObjectManager objectManager;
-
+   
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigid;
+    [SerializeField] private List<CharacterStats> statsModifier;
+
 
     [SerializeField] private TextMeshPro CurrentHpTxt;
     private void Awake()
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour
         if (curShotDelay < maxShotDelay)
             return;
 
-        if(enemyName == "EnemyS")
+        if (enemyName == "EnemyS")
         {
             GameObject bullet = objectManager.MakeObj("BulletEnemyA");
             bullet.transform.position = transform.position;
@@ -89,7 +91,7 @@ public class Enemy : MonoBehaviour
             rigidR.AddForce(dirVecR.normalized * 10, ForceMode2D.Impulse);
             rigidL.AddForce(dirVecL.normalized * 10, ForceMode2D.Impulse);
         }
-        
+
         curShotDelay = 0;
     }
 
@@ -99,13 +101,23 @@ public class Enemy : MonoBehaviour
         spriteRenderer.sprite = sprites[1];
         Invoke("ReturnSprite", 0.1f);
         ChangeHealthText();
+        
+        
         if (health <= 0)
         {
+
+           
+            
             gameObject.SetActive(false);
             return;
         }
 
     }
+
+    //GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+    //    OnPickedUp(playerObject);
+
     public void ChangeHealthText()
     {
         CurrentHpTxt.text = health.ToString();
@@ -129,4 +141,14 @@ public class Enemy : MonoBehaviour
             collision.gameObject.SetActive(false);
         }
     }
+
+
+    //void OnPickedUp(GameObject receiver)
+    //{
+    //    CharacterStatsHandler statsHandler = receiver.GetComponent<CharacterStatsHandler>();
+    //    foreach (CharacterStats stat in statsModifier)
+    //    {
+    //        statsHandler.AddStatModifier(stat);
+    //    }
+    //}
 }

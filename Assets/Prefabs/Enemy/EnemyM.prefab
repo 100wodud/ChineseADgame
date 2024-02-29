@@ -363,4 +363,9 @@ MonoBehaviour:
   bulletObjB: {fileID: 6548206371846536784, guid: d94aa3eb5b2160e4d8d8392309b5be8e, type: 3}
   player: {fileID: 0}
   objectManager: {fileID: 0}
+  statsModifier:
+  - statsChangeType: 0
+    maxHealth: 0
+    speed: 0
+    attackSO: {fileID: 11400000, guid: 08f7d3fbc4d0d3e4aba735c9f08760be, type: 2}
   CurrentHpTxt: {fileID: 3433515549260971559}
