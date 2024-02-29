@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         switch (enemyName)
         {
             case "B":
-                health = 2 * level;
+                health = 150 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "L":
