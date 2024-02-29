@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         {
             case "B":
                 health = 3000;
-                Invoke("Stop", 2);
+                Invoke("Stop", 2.8f);
                 break;
             case "L":
                 health = 40;
@@ -278,6 +278,15 @@ public class Enemy : MonoBehaviour
             OnHit(bullet.dmg);
 
             collision.gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-health);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
