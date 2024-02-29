@@ -54,4 +54,5 @@ public class TopDownShooting : MonoBehaviour
     {
         return Quaternion.Euler(0, 0, degree) * v;
     }
+
 }
