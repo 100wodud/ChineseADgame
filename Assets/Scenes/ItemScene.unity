@@ -1242,6 +1242,7 @@ MonoBehaviour:
   Pause: {fileID: 835106454}
   Mute: {fileID: 614667845}
   Loud: {fileID: 129794920}
+  Passive: {fileID: 0}
 --- !u!1 &298131767
 GameObject:
   m_ObjectHideFlags: 0
