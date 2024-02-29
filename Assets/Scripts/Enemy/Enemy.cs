@@ -47,17 +47,19 @@ public class Enemy : MonoBehaviour
         switch (enemyName)
         {
             case "B":
-                health = 3000;
-                Invoke("Stop", 2.8f);
+                health = 2;
                 break;
             case "L":
                 health = 40;
+                CurrentHpTxt.text = "40";
                 break;
-            case "EnemyM":
+            case "M":
                 health = 10;
+                CurrentHpTxt.text = "10";
                 break;
-            case "EnemyS":
+            case "S":
                 health = 3;
+                CurrentHpTxt.text = "3";
                 break;
 
         }

@@ -566,6 +566,6 @@ MonoBehaviour:
     m_Bits: 64
   statsModifier:
   - statsChangeType: 0
-    maxHealth: 1
+    maxHealth: 0
     speed: 0
     attackSO: {fileID: 11400000, guid: 039f9ea9abd0ce54ab82015cc992fec8, type: 2}
