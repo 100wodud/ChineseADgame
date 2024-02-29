@@ -37,9 +37,13 @@ public class GameManager : MonoBehaviour
     public int spawnIndex;
     public bool spawnEnd;
 
+    private HealthSystem playerHealthSystem;
+
 
     void Awake()
     {
+        playerHealthSystem = player.GetComponent<HealthSystem>();
+        playerHealthSystem.OnDeath += GameOver;
         spawnList = new List<Spawn>();
         enemyObjs = new string[] { "EnemyS", "EnemyM", "EnemyL", "EnemyB" };
         ReadSpawnFile();
@@ -197,6 +201,11 @@ public class GameManager : MonoBehaviour
     {
         CharacterStatsHandler statsHandler = player.GetComponent<CharacterStatsHandler>();
         statsHandler.RemoveAllStatModifier();
+
+    }
+
+    private void GameOver()
+    {
 
     }
 }
