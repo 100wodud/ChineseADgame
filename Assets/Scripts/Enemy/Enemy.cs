@@ -93,15 +93,15 @@ public class Enemy : MonoBehaviour
 
     void OnHit(int dmg)
     {
+        health -= dmg;
+        spriteRenderer.sprite = sprites[1];
+        Invoke("ReturnSprite", 0.1f);
+
         if (health <= 0)
         {
             gameObject.SetActive(false);
             return;
         }
-
-        health -= dmg;
-        spriteRenderer.sprite = sprites[1];
-        Invoke("ReturnSprite", 0.1f);
 
     }
 
