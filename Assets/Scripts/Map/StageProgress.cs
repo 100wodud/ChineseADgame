@@ -8,8 +8,6 @@ public class StageProgress : MonoBehaviour
 {
     [SerializeField] Slider slider = null;
 
-    public GameObject test;
-
     private float tLoading = 10;
     private float tCurrent;
     private float tStart;
@@ -30,14 +28,6 @@ public class StageProgress : MonoBehaviour
     void Update()
     {
         Loading();
-        if (time_Spawn < (int)(tCurrent / tLoading * 5f))
-        {
-            float randX = Random.Range(-4, 4);
-            GameObject tests = Instantiate(test);
-            tests.transform.position = new Vector3(randX, 10, 0);
-            time_Spawn = (int)(tCurrent / tLoading * 5f);
-        } 
-
     }
     private void Loading()
     {
