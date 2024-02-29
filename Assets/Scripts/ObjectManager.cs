@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
-    public GameObject WallTPrefab;
-    public GameObject WallBPrefab;
     public GameObject enemyBPrefab;
     public GameObject enemyLPrefab;
     public GameObject enemyMPrefab;
@@ -16,9 +14,6 @@ public class ObjectManager : MonoBehaviour
     public GameObject bulletEnemyBPrefab;
     public GameObject bulletBossAPrefab;
     public GameObject bulletBossBPrefab;
-
-    GameObject[] WallT;
-    GameObject[] WallB;
 
     GameObject[] targetPool;
 
@@ -33,28 +28,6 @@ public class ObjectManager : MonoBehaviour
     GameObject[] bulletBossA;
     GameObject[] bulletBossB;
 
-    /*
-    void Awake()
-    {
-        WallT = new GameObject[10];
-        WallB = new GameObject[10];
-
-        Generate();
-    }
-    void Generate()
-    {
-        for (int i = 0; i < WallB.Length; i++)
-        {
-            WallB[i] = Instantiate(WallBPrefab);
-            WallB[i].SetActive(false);
-        }
-        for (int i = 0; i < WallT.Length; i++)
-        {
-            WallT[i] = Instantiate(WallTPrefab);
-            WallT[i].SetActive(false);
-        }
-    }
-    */
     void Awake()
     {
         enemyB = new GameObject[5];
@@ -127,12 +100,6 @@ public class ObjectManager : MonoBehaviour
     {
         switch (type)
         {
-            case "WallT":
-                targetPool = WallT;
-                break;
-            case "WallB":
-                targetPool = WallB;
-                break;
             case "EnemyL":
                 targetPool = enemyL;
                 break;
@@ -176,12 +143,6 @@ public class ObjectManager : MonoBehaviour
     {
         switch (type)
         {
-            case "WallT":
-                targetPool = WallT;
-                break;
-            case "WallB":
-                targetPool = WallB;
-                break;
             case "EnemyL":
                 targetPool = enemyL;
                 break;
