@@ -11,16 +11,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
 
-    public string Bullet;
-    public string[] colliderObjs;
     public Transform[] spawnPoints;
 
     public float nextSpawnDelay;
     public float curSpawnDelay;
     public float itemSpawnDelay;
     public float spawnDelay;
-
-    int level = 0;
 
     public float Score;
 
@@ -36,7 +32,6 @@ public class GameManager : MonoBehaviour
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
-
 
     void Awake()
     {
@@ -93,7 +88,6 @@ public class GameManager : MonoBehaviour
 
         if (curSpawnDelay > nextSpawnDelay && !spawnEnd)
         {
-            //SpawnCollider();
             SpawnEnemy();
             curSpawnDelay = 0f;
         }
@@ -103,33 +97,7 @@ public class GameManager : MonoBehaviour
             SpawnItem();
             itemSpawnDelay = 0f;
         }
-
-        if ((int)Score / 100 > level)
-        {
-            level = (int)Score / 100;
-            InvokeRepeating("SpawnBullet", 5f, level);
-            spawnDelay -= 0.5f;
-
-        }
     }
-        void SpawnCollider()
-        {
-            int ranCollider = Random.Range(0, 2);
-            int ranPoint = Random.Range(0, 5);
-
-            GameObject wall = objectManager.MakeObj(colliderObjs[ranCollider]);
-            wall.transform.position = spawnPoints[ranPoint].position;
-        }
-
-        void SpawnBullet()
-        {
-            float randX = 20f;
-            float randY = Random.Range(-4, 4);
-            transform.position = new Vector3(randX, randY, 0);
-            GameObject wall = objectManager.MakeObj(Bullet);
-            wall.transform.position = transform.position;
-        }
-
         void SpawnEnemy()
         {
             int enemyIndex = 0;
