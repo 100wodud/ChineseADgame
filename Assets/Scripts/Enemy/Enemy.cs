@@ -33,13 +33,13 @@ public class Enemy : MonoBehaviour
     {
         switch (enemyName)
         {
-            case "L":
+            case "EnemyL":
                 health = 40;
                 break;
-            case "M":
+            case "EnemyM":
                 health = 10;
                 break;
-            case "S":
+            case "EnemyS":
                 health = 3;
                 break;
 
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         if (curShotDelay < maxShotDelay)
             return;
 
-        if(enemyName == "S")
+        if(enemyName == "EnemyS")
         {
             GameObject bullet = objectManager.MakeObj("BulletEnemyA");
             bullet.transform.position = transform.position;
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
             Vector3 dirVec = player.transform.position - transform.position;
             rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
         }
-        else if (enemyName == "L")
+        else if (enemyName == "EnemyL")
         {
             GameObject bulletR = objectManager.MakeObj("BulletEnemyB");
             bulletR.transform.position = transform.position + Vector3.right * 0.3f;

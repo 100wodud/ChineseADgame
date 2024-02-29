@@ -502,8 +502,8 @@ MonoBehaviour:
   items:
   - {fileID: 5791805412851093231, guid: f1e6ef3b1dfbff34dbf99cb247dd0170, type: 3}
   - {fileID: 3355521184735153152, guid: 95af13a098ab0ae449a545c244610dbc, type: 3}
-  - {fileID: 7654241618974786198, guid: 7d7bd5bcb5dc41041a94e47f11190c71, type: 3}
-  - {fileID: 3362523277673422456, guid: 283ee17395b0ac147a2e7d49c0dc8a52, type: 3}
+  - {fileID: 5791805412851093231, guid: 9ed6f24965e935845ba73e2069d92d73, type: 3}
+  - {fileID: 5791805412851093231, guid: f178c924e6f2ced45a4b4115e0d90dbd, type: 3}
   panel: {fileID: 4570302207699115984}
   spawnPoints:
   - {fileID: 2152477504060072775}
