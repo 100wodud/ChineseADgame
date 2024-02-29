@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System.Runtime.InteropServices;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         I = this;
-
+        Instantiate(player);
     }
 
     void ReadSpawnFile()
@@ -189,5 +190,10 @@ public class GameManager : MonoBehaviour
             Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
         }
 
-  
+    void OnApplicationQuit()
+    {
+        CharacterStatsHandler statsHandler = player.GetComponent<CharacterStatsHandler>();
+        statsHandler.RemoveAllStatModifier();
+
+    }
 }

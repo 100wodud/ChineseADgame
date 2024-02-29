@@ -49,7 +49,6 @@ public class StageProgress : MonoBehaviour
         else
         {
             FillAmount(1);
-            Debug.Log("보스등장");
             Time.timeScale = 0f;
         }
     }
