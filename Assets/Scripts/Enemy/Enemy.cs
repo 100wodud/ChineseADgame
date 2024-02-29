@@ -270,8 +270,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
 
-           
-            
+            BulletDmgUP(5);
+
             gameObject.SetActive(false);
             if(enemyName == "B")
             {
@@ -321,15 +321,13 @@ public class Enemy : MonoBehaviour
     }
 
 
+    void BulletDmgUP(int Up)
+    {
+        Bullet bullet = player.GetComponent<Bullet>();
 
-    //void OnPickedUp(GameObject receiver)
-    //{
-    //    CharacterStatsHandler statsHandler = receiver.GetComponent<CharacterStatsHandler>();
-    //    foreach (CharacterStats stat in statsModifier)
-    //    {
-    //        statsHandler.AddStatModifier(stat);
-    //    }
-    //}
+        bullet.dmg += Up;
+    }
+   
 }
 
 
