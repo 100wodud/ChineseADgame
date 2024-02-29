@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameover;
 
 
+
     void Awake()
     {
         playerHealthSystem = player.GetComponent<HealthSystem>();
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         I = this;
         Instantiate(player);
     }
+
 
     void ReadSpawnFile()
     {

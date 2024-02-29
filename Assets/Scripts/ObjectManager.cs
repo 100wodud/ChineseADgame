@@ -30,7 +30,7 @@ public class ObjectManager : MonoBehaviour
 
     void Awake()
     {
-        enemyB = new GameObject[5];
+        enemyB = new GameObject[2];
 
         enemyL = new GameObject[10];
         enemyM = new GameObject[10];
