@@ -37,6 +37,16 @@ public class CharacterStatsHandler : MonoBehaviour
         UpdateCharacterStats();
     }
 
+
+    public void RemoveAllStatModifier()
+    {
+        for (int i = statsModifiers.Count - 1; i >= 0; i--)
+        {
+            statsModifiers.Remove(statsModifiers[i]);
+        }
+        UpdateCharacterStats();
+    }
+
     private void UpdateCharacterStats()
     {
         AttackSO attackSO = null;
