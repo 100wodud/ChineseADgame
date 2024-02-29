@@ -433,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &134616276
 Transform:
   m_ObjectHideFlags: 0
@@ -1395,6 +1395,7 @@ MonoBehaviour:
   - EnemyL
   - EnemyM
   - EnemyS
+  - EnemyB
   itemObjs:
   - {fileID: 9072074992700940766, guid: a6080e46e1fa5e044be0dd9e01ffe4ca, type: 3}
   - {fileID: 2387125508504349273, guid: ee2eb2ecaaca7d2468e9da5f92db6524, type: 3}
@@ -3568,11 +3569,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallTPrefab: {fileID: 8659751684110438897, guid: ecf0018d824074046aeafe5835220eb3, type: 3}
   WallBPrefab: {fileID: 8659751684110438897, guid: 17d234d1721bcd14c8962beaf0abda8d, type: 3}
+  enemyBPrefab: {fileID: 7917150059948129649, guid: 10c8570104ea59f4c806c997c0dce782, type: 3}
   enemyLPrefab: {fileID: 890072518821175215, guid: fd08c82328f191244aa3ba3c7c2395bf, type: 3}
   enemyMPrefab: {fileID: 8125844000764328524, guid: c1b1d6f6b6bef3049ab1cf0da93155ca, type: 3}
   enemySPrefab: {fileID: 4314977326700057630, guid: fe8e0fba7beec9a479fa048f533c0d21, type: 3}
   bulletEnemyAPrefab: {fileID: 6548206371846536784, guid: 3a508333988783e459d4289234dfb26c, type: 3}
   bulletEnemyBPrefab: {fileID: 6548206371846536784, guid: d94aa3eb5b2160e4d8d8392309b5be8e, type: 3}
+  bulletBossAPrefab: {fileID: 6548206371846536784, guid: e175686dc5f6f7b40bc8df750d9f1fa8, type: 3}
+  bulletBossBPrefab: {fileID: 6548206371846536784, guid: 61dd7bae7fa7a1f408513fe376823425, type: 3}
 --- !u!4 &1928131079
 Transform:
   m_ObjectHideFlags: 0

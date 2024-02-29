@@ -55,6 +55,5 @@ public class UIPanel : MonoBehaviour
     public void TestFunction()
     {
         Instantiate(Passive);
-        Time.timeScale = 0f;
     }
 }

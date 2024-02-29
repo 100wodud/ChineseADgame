@@ -60,7 +60,7 @@ public class HealthSystem : MonoBehaviour
 
     public void ChangeHealthText()
     {
-        currentHealthText.text = CurrentHealth.ToString();
+        currentHealthText.text = ((int)CurrentHealth).ToString();
     }
 
     private void CallDeath()
