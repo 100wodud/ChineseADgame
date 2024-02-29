@@ -39,23 +39,6 @@ public class RangedAttackController : MonoBehaviour
         _rigidbody.velocity = _direction * _attackData.speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
-        {
-            DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f);
-        }
-        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
-        {
-            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
-            if (healthSystem != null)
-            {
-                healthSystem.ChangeHealth(-_attackData.power);
-            }
-            DestroyProjectile(collision.ClosestPoint(transform.position));
-        }
-    }
-
 
     public void InitializeAttack(Vector2 direction, RangedAttackData attackData, ProjectileManager projectileManager)
     {

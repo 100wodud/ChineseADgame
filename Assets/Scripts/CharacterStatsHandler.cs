@@ -13,7 +13,6 @@ public class CharacterStatsHandler : MonoBehaviour
     public List<CharacterStats> statsModifiers = new List<CharacterStats>();
 
     private const float MinAttackDelay = 1f;
-    private const float MinAttackPower = 0.5f;
     private const float MinAttackSize = 0.4f;
     private const float MinAttackSpeed = 0.1f;
 
@@ -115,7 +114,6 @@ public class CharacterStatsHandler : MonoBehaviour
         }
 
         currentAttack.delay = operation(currentAttack.delay, newAttack.delay);
-        currentAttack.power = operation(currentAttack.power, newAttack.power);
         currentAttack.size = operation(currentAttack.size, newAttack.size);
         currentAttack.speed = operation(currentAttack.speed, newAttack.speed);
     }
@@ -160,7 +158,6 @@ public class CharacterStatsHandler : MonoBehaviour
         }
 
         LimitStats(ref CurrentStats.attackSO.delay, MinAttackDelay);
-        LimitStats(ref CurrentStats.attackSO.power, MinAttackPower);
         LimitStats(ref CurrentStats.attackSO.size, MinAttackSize);
         LimitStats(ref CurrentStats.attackSO.speed, MinAttackSpeed);
         LimitStats(ref CurrentStats.speed, MinSpeed);
