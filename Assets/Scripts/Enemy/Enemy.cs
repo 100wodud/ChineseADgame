@@ -311,7 +311,7 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PlayerBullet")
         {
-            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            PlayerBullet bullet = collision.gameObject.GetComponent<PlayerBullet>();
             OnHit(bullet.dmg);
 
             collision.gameObject.SetActive(false);
@@ -339,7 +339,7 @@ public class Enemy : MonoBehaviour
     void BulletDmgUP(int Up)
     {
 
-        bulletDmg.GetComponent<Bullet>().dmg += Up;
+        bulletDmg.GetComponent<PlayerBullet>().dmg += Up;
 
     }
    

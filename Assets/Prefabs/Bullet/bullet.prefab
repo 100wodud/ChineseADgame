@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3121611750484628649}
   - component: {fileID: 3184682083697375130}
   - component: {fileID: 210760281753716586}
-  - component: {fileID: -526780156369984981}
+  - component: {fileID: -973482112376596713}
   m_Layer: 0
   m_Name: bullet
   m_TagString: PlayerBullet
@@ -175,7 +175,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33333334, y: 0.45833334}
   m_EdgeRadius: 0
---- !u!114 &-526780156369984981
+--- !u!114 &-973482112376596713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,8 +184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6548206371846536784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00dab2568bdea449b37df42f239afb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a07d22e501659141b8734adcd330092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 100
-  isRotate: 0
+  dmg: 1

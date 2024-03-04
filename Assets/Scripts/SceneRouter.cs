@@ -10,7 +10,7 @@ public class SceneRouter : MonoBehaviour
     {
         SceneManager.LoadScene("BackgroundScene");
         Time.timeScale = 1f;
-        bulletDmg.GetComponent<Bullet>().dmg = 3;
+        bulletDmg.GetComponent<PlayerBullet>().dmg = 3;
     }
 
     public void GotoMainScene()
@@ -23,7 +23,7 @@ public class SceneRouter : MonoBehaviour
     public void RestartScene()
     {
         DataManager.I.CurrentScore = 0;
-        bulletDmg.GetComponent<Bullet>().dmg = 3;
+        bulletDmg.GetComponent<PlayerBullet>().dmg = 3;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
 

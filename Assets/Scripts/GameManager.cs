@@ -174,6 +174,6 @@ public class GameManager : MonoBehaviour
     {
         CharacterStatsHandler statsHandler = player.GetComponent<CharacterStatsHandler>();
         statsHandler.RemoveAllStatModifier();
-        bulletDmg.GetComponent<Bullet>().dmg = 3;
+        bulletDmg.GetComponent<PlayerBullet>().dmg = 3;
     }
 }
