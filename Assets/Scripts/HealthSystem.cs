@@ -13,6 +13,8 @@ public class HealthSystem : MonoBehaviour
     public event Action OnHeal;
     public event Action OnDeath;
 
+    public GameObject gameOver;
+
     public float CurrentHealth {  get; private set; }
 
     public float MaxHealth => _statsHandler.CurrentStats.maxHealth;
@@ -24,7 +26,8 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        CurrentHealth = _statsHandler.CurrentStats.maxHealth * 0.001f;
+        CurrentHealth = _statsHandler.CurrentStats.maxHealth;
+        OnDeath += GameOver;
         currentHealthText.text = CurrentHealth.ToString();
     }
 
@@ -66,5 +69,11 @@ public class HealthSystem : MonoBehaviour
     private void CallDeath()
     {
         OnDeath?.Invoke();
+    }
+
+    private void GameOver()
+    {
+        Instantiate(gameOver);
+        Time.timeScale = 0f;
     }
 }

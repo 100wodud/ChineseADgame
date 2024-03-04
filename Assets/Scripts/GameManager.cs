@@ -32,15 +32,16 @@ public class GameManager : MonoBehaviour
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
+
     public GameObject bulletDmg;
     private HealthSystem playerHealthSystem;
+
     public GameObject gameover;
+
 
 
     void Awake()
     {
-        playerHealthSystem = player.GetComponent<HealthSystem>();
-        playerHealthSystem.OnDeath += GameOver;
         spawnList = new List<Spawn>();
         enemyObjs = new string[] { "EnemyS", "EnemyM", "EnemyL", "EnemyB" };
         ReadSpawnFile();
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         I = this;
         Instantiate(player);
     }
+
 
     void ReadSpawnFile()
     {
@@ -172,12 +174,5 @@ public class GameManager : MonoBehaviour
         CharacterStatsHandler statsHandler = player.GetComponent<CharacterStatsHandler>();
         statsHandler.RemoveAllStatModifier();
         bulletDmg.GetComponent<Bullet>().dmg = 1;
-    }
-
-    private void GameOver()
-    {
-        Debug.Log("asdasdsad");
-        Instantiate(gameover);
-        Time.timeScale = 0f;
     }
 }

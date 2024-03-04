@@ -7,6 +7,8 @@ public class DataManager : MonoBehaviour
     public static DataManager I;
     public float bestScore;
 
+    public int level = 1;
+
 
     void Awake()
     {
@@ -18,5 +20,11 @@ public class DataManager : MonoBehaviour
         I = this;
         DontDestroyOnLoad(this.gameObject);
 
+    }
+
+    public void StageLevelup()
+    {
+        Debug.Log("Å¬¸®¾î");
+        level++;
     }
 }

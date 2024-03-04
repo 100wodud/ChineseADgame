@@ -46,23 +46,25 @@ public class Enemy : MonoBehaviour
 
     void OnEnable()
     {
+        int level= DataManager.I.level;
+
         switch (enemyName)
         {
             case "B":
-                health = 11112;
-                CurrentHpTxt.text = "11112";
+                health = 150 * level;
+                CurrentHpTxt.text = health.ToString();
                 break;
             case "L":
-                health = 40;
-                CurrentHpTxt.text = "40";
+                health = 40 * level;
+                CurrentHpTxt.text = health.ToString();
                 break;
             case "M":
-                health = 10;
-                CurrentHpTxt.text = "10";
+                health = 10 * level;
+                CurrentHpTxt.text = health.ToString();
                 break;
             case "S":
-                health = 3;
-                CurrentHpTxt.text = "3";
+                health = 3 * level;
+                CurrentHpTxt.text = health.ToString();
                 break;
 
         }

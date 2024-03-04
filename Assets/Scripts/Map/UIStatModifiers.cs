@@ -17,6 +17,7 @@ public class UIStatModifiers : MonoBehaviour
 
         }
 
+        DataManager.I.StageLevelup();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
 

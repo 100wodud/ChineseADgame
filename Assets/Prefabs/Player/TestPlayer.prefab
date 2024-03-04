@@ -338,7 +338,7 @@ Transform:
   m_Children:
   - {fileID: 3455485939945686836}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2521569847271320749
 MonoBehaviour:
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats:
     statsChangeType: 2
-    maxHealth: 100000
+    maxHealth: 100
     speed: 5
     attackSO: {fileID: 11400000, guid: b76d5f3cc9548194389fe1532b6ced68, type: 2}
   statsModifiers: []
@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthText: {fileID: 8900600766556919331}
+  gameOver: {fileID: 7197872464283487449, guid: 606d9b5585f42ae4f916695d359446e8, type: 3}
 --- !u!1 &9011964860210833811
 GameObject:
   m_ObjectHideFlags: 0
