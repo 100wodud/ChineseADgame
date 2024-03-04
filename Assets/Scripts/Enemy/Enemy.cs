@@ -264,7 +264,7 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("OnHit");
         }
-        //spriteRenderer.sprite = sprites[1];
+        spriteRenderer.sprite = sprites[1];
         Invoke("ReturnSprite", 0.1f);
         ChangeHealthText();
         
