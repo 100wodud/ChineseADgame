@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour
         Instantiate(player);
     }
 
+    private void Start()
+    {
+        Score += DataManager.I.CurrentScore;
+
+    }
 
     void ReadSpawnFile()
     {
@@ -69,7 +74,6 @@ public class GameManager : MonoBehaviour
         while(stringReader != null)
         {
             string line = stringReader.ReadLine();
-            Debug.Log(line);
 
             if(line == null)
                 break;

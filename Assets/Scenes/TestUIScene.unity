@@ -1093,6 +1093,7 @@ MonoBehaviour:
   player: {fileID: 9010970641923761171, guid: 6cb3595e3c071974ba4dd72a11946b1b, type: 3}
   spawnIndex: 0
   spawnEnd: 0
+  bulletDmg: {fileID: 6548206371846536784, guid: 381e654e284aa584d9f7b0ff8428c51a, type: 3}
   gameover: {fileID: 7197872464283487449, guid: 606d9b5585f42ae4f916695d359446e8, type: 3}
 --- !u!4 &298131769
 Transform:
@@ -3513,6 +3514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestScore: 0
+  CurrentScore: 0
+  level: 1
 --- !u!4 &2099716414
 Transform:
   m_ObjectHideFlags: 0

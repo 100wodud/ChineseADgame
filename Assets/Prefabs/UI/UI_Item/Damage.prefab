@@ -365,3 +365,5 @@ MonoBehaviour:
     speed: 0
     attackSO: {fileID: 11400000, guid: dd502b9270ddf5448b69c222b35ad97b, type: 2}
   Player: {fileID: 9010970641923761171, guid: 6cb3595e3c071974ba4dd72a11946b1b, type: 3}
+  bulletDmg: {fileID: 6548206371846536784, guid: 381e654e284aa584d9f7b0ff8428c51a, type: 3}
+  CurScore: 0

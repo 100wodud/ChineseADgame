@@ -6,6 +6,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager I;
     public float bestScore;
+    public float CurrentScore = 0;
 
     public int level = 1;
 
@@ -24,7 +25,6 @@ public class DataManager : MonoBehaviour
 
     public void StageLevelup()
     {
-        Debug.Log("Å¬¸®¾î");
         level++;
     }
 }

@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.036688328, y: -1.0566901}
-  m_SizeDelta: {x: 2, y: 2}
+  m_AnchoredPosition: {x: 0, y: 1.549}
+  m_SizeDelta: {x: 7.0071, y: 1.7809}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7724117631980179410
 MeshRenderer:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -360,7 +360,9 @@ MonoBehaviour:
   speed: 2
   power: 1.5
   health: 2
-  sprites: []
+  sprites:
+  - {fileID: 2192450021786810173, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
+  - {fileID: -7945901444079236628, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   maxShotDelay: 0
   curShotDelay: 0
   PassiveItem: {fileID: 5536397087748816632, guid: 3b6d0faa1f8300c4ba8e48f876d3e26e, type: 3}
@@ -373,4 +375,5 @@ MonoBehaviour:
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 0200000003000000630000000a000000
+  level: 1
   CurrentHpTxt: {fileID: 1002804300986913385}
