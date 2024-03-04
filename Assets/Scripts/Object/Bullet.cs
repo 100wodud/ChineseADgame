@@ -18,5 +18,16 @@ public class Bullet : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        else if (collision.gameObject.tag == "Player")
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-dmg);
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 }
