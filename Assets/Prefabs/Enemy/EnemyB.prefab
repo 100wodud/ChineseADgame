@@ -356,8 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff471c77b144aa40806f81581dc9943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   enemyName: B
-  speed: 0.3
+  speed: 1
   power: 1.5
   health: 2
   sprites:
