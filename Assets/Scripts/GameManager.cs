@@ -68,11 +68,11 @@ public class GameManager : MonoBehaviour
         TextAsset textFile = Resources.Load("Stage 0") as TextAsset;
         StringReader stringReader = new StringReader(textFile.text); //파일 내의 문자열 데이터 읽기 클래스
 
-        while(stringReader != null)
+        while (stringReader != null)
         {
             string line = stringReader.ReadLine();
 
-            if(line == null)
+            if (line == null)
                 break;
 
             // 리스폰 데이터 생성
@@ -107,53 +107,56 @@ public class GameManager : MonoBehaviour
             itemSpawnDelay = 0f;
         }
     }
-        void SpawnEnemy()
+    void SpawnEnemy()
+    {
+        int enemyIndex = 0;
+        switch (spawnList[spawnIndex].type)
         {
-            int enemyIndex = 0;
-            switch (spawnList[spawnIndex].type)
-            {
-                case "S":
-                    enemyIndex = 0;
-                    break;
-                case "M":
-                    enemyIndex = 1;
-                    break;
-                case "L":
-                    enemyIndex = 2;
-                    break;
-                case "B":
-                    enemyIndex = 3;
-                    break;
-        }
-            int enemyPoint = spawnList[spawnIndex].point;
-            GameObject enemy = objectManager.MakeObj(enemyObjs[enemyIndex]);
-            enemy.transform.position = spawnPoints[enemyPoint].position;
-
-            Rigidbody2D rigid = enemy.GetComponent<Rigidbody2D>();
-            Enemy enemyLogic = enemy.GetComponent<Enemy>();
-            enemyLogic.player = player;
-            enemyLogic.objectManager = objectManager;
-
-            rigid.velocity = new Vector2(0, enemyLogic.speed * (-1));
-
-            // 리스폰 인덱스 증가
-            spawnIndex++;
-            if(spawnIndex == spawnList.Count)
-            {
-                spawnEnd = true;
-                return;
-            }
-
-            // 다음 리스폰 딜레이 갱신
-            nextSpawnDelay = spawnList[spawnIndex].delay;
-
+            case "S":
+                enemyIndex = 0;
+                break;
+            case "M":
+                enemyIndex = 1;
+                break;
+            case "L":
+                enemyIndex = 2;
+                break;
+            case "B":
+                enemyIndex = 3;
+                break;
         }
 
-        void SpawnItem()
+        int enemyPoint = spawnList[spawnIndex].point;
+        GameObject enemy = objectManager.MakeObj(enemyObjs[enemyIndex]);
+        enemy.transform.position = spawnPoints[enemyPoint].position;
+
+        Rigidbody2D rigid = enemy.GetComponent<Rigidbody2D>();
+        Enemy enemyLogic = enemy.GetComponent<Enemy>();
+        enemyLogic.player = player;
+        enemyLogic.objectManager = objectManager;
+        enemyLogic.isDead = false;
+
+
+        rigid.velocity = new Vector2(0, enemyLogic.speed * (-1));
+
+        // 리스폰 인덱스 증가
+        spawnIndex++;
+        if (spawnIndex == spawnList.Count)
         {
-            
-            int ranItem2 = Random.Range(0, 4);
-            int ranItem3 = Random.Range(0, 4);
+            spawnEnd = true;
+            return;
+        }
+
+        // 다음 리스폰 딜레이 갱신
+        nextSpawnDelay = spawnList[spawnIndex].delay;
+
+    }
+
+    void SpawnItem()
+    {
+
+        int ranItem2 = Random.Range(0, 4);
+        int ranItem3 = Random.Range(0, 4);
 
         if (ranItem2 == ranItem3 && ranItem2 < 4)
         {
@@ -164,11 +167,11 @@ public class GameManager : MonoBehaviour
             ranItem3--;
         }
 
-            Vector3 secondItemPosition = spawnPoints[2].position + new Vector3(2.5f, 0f, 0f);
-            Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
-            Vector3 thirdItemPosition = spawnPoints[2].position + new Vector3(-2.5f, 0f, 0f);
-            Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
-        }
+        Vector3 secondItemPosition = spawnPoints[2].position + new Vector3(2.5f, 0f, 0f);
+        Instantiate(itemObjs[ranItem2], secondItemPosition, spawnPoints[3].rotation);
+        Vector3 thirdItemPosition = spawnPoints[2].position + new Vector3(-2.5f, 0f, 0f);
+        Instantiate(itemObjs[ranItem3], thirdItemPosition, spawnPoints[3].rotation);
+    }
 
     void OnApplicationQuit()
     {

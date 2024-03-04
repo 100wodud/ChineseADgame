@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public bool isDead = false;
+
     public string enemyName;
     public float speed;
     public float power;
@@ -338,9 +340,11 @@ public class Enemy : MonoBehaviour
 
     void BulletDmgUP(int Up)
     {
-
-        bulletDmg.GetComponent<PlayerBullet>().dmg += Up;
-
+        if (!isDead)
+        {
+            bulletDmg.GetComponent<PlayerBullet>().dmg += Up;
+            isDead = true;
+        }
     }
    
 }
