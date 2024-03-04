@@ -24,8 +24,8 @@
 - DOTween을 이용한 Font 반짝임 효과
 - Game Over 및 Passive 아이템 선택
 #### 플레이어
--
--
+- 플레이어 이동 및 공격 구현
+- 스크립터블 오브젝트, 캐릭터 기본 스텟 및 체력 변동 시스템 구현
 #### 몬스터 - <a href="https://github.com/100wodud/ChineseADgame/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Enemy)" >상세보기 - WIKI 이동</a>
 - 3가지 타입의 적 유닛
 - 보스 유닛
