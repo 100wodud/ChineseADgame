@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 890072518821175215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4902467138935783362}
@@ -191,6 +191,7 @@ MonoBehaviour:
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 
+  level: 1
   CurrentHpTxt: {fileID: 6318523624567322138}
 --- !u!1 &1031282903912468750
 GameObject:

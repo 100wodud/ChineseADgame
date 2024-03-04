@@ -9,8 +9,6 @@ public abstract class PickupItem: MonoBehaviour
     {
         if (canBePickupBy.value == (canBePickupBy.value | (1 << other.gameObject.layer)))
         {
-
-            Debug.Log("충돌했다!");
             OnPickedUp(other.gameObject);
             if (destroyOnPickup)
             {

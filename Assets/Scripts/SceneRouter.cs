@@ -5,21 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class SceneRouter : MonoBehaviour
 {
-
+    public GameObject bulletDmg;
     public void GotoBackgroundScene()
     {
         SceneManager.LoadScene("BackgroundScene");
         Time.timeScale = 1f;
+        bulletDmg.GetComponent<Bullet>().dmg = 1;
     }
 
     public void GotoMainScene()
     {
+        DataManager.I.CurrentScore = 0;
         SceneManager.LoadScene("MainScene");
         Time.timeScale = 1f;
     }
 
     public void RestartScene()
     {
+        DataManager.I.CurrentScore = 0;
+        bulletDmg.GetComponent<Bullet>().dmg = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
 

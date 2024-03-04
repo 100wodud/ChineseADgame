@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     public int curPatternCount;
     public int[] maxPatternCount;
 
+    public int level = 1;
   
     Animator anim;
 
@@ -42,28 +43,31 @@ public class Enemy : MonoBehaviour
         
         if (enemyName == "B")
             anim = GetComponent<Animator>();
+
     }
 
     void OnEnable()
     {
-        int level= DataManager.I.level;
-
+        if (DataManager.I != null)
+        {
+            level = DataManager.I.level;
+        }
         switch (enemyName)
         {
             case "B":
-                health = 150 * level;
+                health = 300 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "L":
-                health = 40 * level;
+                health = 80 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "M":
-                health = 10 * level;
+                health = 20 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "S":
-                health = 3 * level;
+                health = 5 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
 
@@ -112,7 +116,6 @@ public class Enemy : MonoBehaviour
 
     void FireFoward()
     {
-        Debug.Log("������ 4�� �߻�");
         GameObject bulletR = objectManager.MakeObj("BulletBossA");
         bulletR.transform.position = transform.position + Vector3.right * 1f;
         GameObject bulletL = objectManager.MakeObj("BulletBossA");
@@ -143,7 +146,6 @@ public class Enemy : MonoBehaviour
 
     void FireShot()
     {
-        Debug.Log("����");
         for (int index = 0; index <5; index++)
         {
             GameObject bullet = objectManager.MakeObj("BulletEnemyB");
@@ -168,8 +170,6 @@ public class Enemy : MonoBehaviour
     }
     void FireArc()
     {
-        Debug.Log("��ä");
-
         GameObject bullet = objectManager.MakeObj("BulletEnemyA");
         bullet.transform.position = transform.position;
         bullet.transform.rotation = Quaternion.identity;
@@ -189,7 +189,6 @@ public class Enemy : MonoBehaviour
     }
     void FireAround()
     {
-        Debug.Log("��");
         int roundNumA = 50;
         int roundNumB = 40;
         int roundNum = curPatternCount%2 == 0 ? roundNumA : roundNumB;
@@ -228,7 +227,7 @@ public class Enemy : MonoBehaviour
         if (curShotDelay < maxShotDelay)
             return;
 
-        if (enemyName == "EnemyS")
+        if (enemyName == "S")
         {
             GameObject bullet = objectManager.MakeObj("BulletEnemyA");
             bullet.transform.position = transform.position;
@@ -237,7 +236,7 @@ public class Enemy : MonoBehaviour
             Vector3 dirVec = player.transform.position - transform.position;
             rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
         }
-        else if (enemyName == "EnemyL")
+        else if (enemyName == "L")
         {
             GameObject bulletR = objectManager.MakeObj("BulletEnemyB");
             bulletR.transform.position = transform.position + Vector3.right * 0.3f;
@@ -271,14 +270,9 @@ public class Enemy : MonoBehaviour
         
         if (health <= 0)
         {
-
-           
             gameObject.SetActive(false);
             switch (enemyName)
             {
-                case "B":
-                    BulletDmgUP(10);
-                    break;
                 case "L":
                     BulletDmgUP(3);
                     break;

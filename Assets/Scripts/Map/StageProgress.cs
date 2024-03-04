@@ -12,8 +12,6 @@ public class StageProgress : MonoBehaviour
     private float tCurrent;
     private float tStart;
 
-    private int time_Spawn = 0;
-
 
 
     // Start is called before the first frame update
@@ -39,7 +37,6 @@ public class StageProgress : MonoBehaviour
         else
         {
             FillAmount(1);
-            Time.timeScale = 0f;
         }
     }
     private void FillAmount(float _value)

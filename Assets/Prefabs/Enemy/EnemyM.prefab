@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 8125844000764328524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3641522140582543456}
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: M
-  speed: 10
+  speed: 5
   power: 0
   health: 10
   sprites:
@@ -373,4 +373,5 @@ MonoBehaviour:
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 
+  level: 1
   CurrentHpTxt: {fileID: 3433515549260971559}
