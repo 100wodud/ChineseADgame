@@ -34,9 +34,6 @@ public class GameManager : MonoBehaviour
     public bool spawnEnd;
 
     public GameObject bulletDmg;
-    private HealthSystem playerHealthSystem;
-
-    public GameObject gameover;
 
 
 
