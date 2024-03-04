@@ -55,19 +55,19 @@ public class Enemy : MonoBehaviour
         switch (enemyName)
         {
             case "B":
-                health = 300 * level;
+                health = 3000 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "L":
-                health = 80 * level;
+                health = 600 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "M":
-                health = 20 * level;
+                health = 100 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
             case "S":
-                health = 5 * level;
+                health = 10 * level;
                 CurrentHpTxt.text = health.ToString();
                 break;
 
@@ -274,10 +274,10 @@ public class Enemy : MonoBehaviour
             switch (enemyName)
             {
                 case "L":
-                    BulletDmgUP(3);
+                    BulletDmgUP(1);
                     break;
                 case "M":
-                    BulletDmgUP(2);
+                    BulletDmgUP(1);
                     break;
                 case "S":
                     BulletDmgUP(1);
@@ -327,6 +327,14 @@ public class Enemy : MonoBehaviour
             {
                 healthSystem.ChangeHealth(-health);
                 gameObject.SetActive(false);
+                if(enemyName == "B")
+                {
+                    if(healthSystem.CurrentHealth > 0)
+                    {
+                        Instantiate(PassiveItem);
+                        Time.timeScale = 0f;
+                    }
+                }
             }
         }
     }

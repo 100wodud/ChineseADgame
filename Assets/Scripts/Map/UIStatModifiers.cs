@@ -22,7 +22,7 @@ public class UIStatModifiers : MonoBehaviour
         DataManager.I.StageLevelup();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         DataManager.I.CurrentScore = CurScore;
-        bulletDmg.GetComponent<Bullet>().dmg = 1;
+        bulletDmg.GetComponent<Bullet>().dmg = 3;
         Time.timeScale = 1.0f;
 
     }
