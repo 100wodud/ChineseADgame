@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
-
+    public GameObject bulletDmg;
     private HealthSystem playerHealthSystem;
     public GameObject gameover;
 
@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
     {
         CharacterStatsHandler statsHandler = player.GetComponent<CharacterStatsHandler>();
         statsHandler.RemoveAllStatModifier();
-
+        bulletDmg.GetComponent<Bullet>().dmg = 1;
     }
 
     private void GameOver()

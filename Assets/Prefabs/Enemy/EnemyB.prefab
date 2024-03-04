@@ -367,7 +367,9 @@ MonoBehaviour:
   bulletObjA: {fileID: 6548206371846536784, guid: e175686dc5f6f7b40bc8df750d9f1fa8, type: 3}
   bulletObjB: {fileID: 6548206371846536784, guid: 61dd7bae7fa7a1f408513fe376823425, type: 3}
   player: {fileID: 0}
+  bulletDmg: {fileID: 6548206371846536784, guid: 381e654e284aa584d9f7b0ff8428c51a, type: 3}
   objectManager: {fileID: 0}
+  statsModifier: []
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 0200000003000000630000000a000000

@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     public GameObject bulletObjA;
     public GameObject bulletObjB;
     public GameObject player;
+    public GameObject bulletDmg;
     public ObjectManager objectManager;
-
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigid;
     [SerializeField] private List<CharacterStats> statsModifier;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         
-        if(enemyName == "B")
+        if (enemyName == "B")
             anim = GetComponent<Animator>();
     }
 
@@ -270,10 +270,25 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
 
-            BulletDmgUP(5);
-
+           
             gameObject.SetActive(false);
-            if(enemyName == "B")
+            switch (enemyName)
+            {
+                case "B":
+                    BulletDmgUP(10);
+                    break;
+                case "L":
+                    BulletDmgUP(3);
+                    break;
+                case "M":
+                    BulletDmgUP(2);
+                    break;
+                case "S":
+                    BulletDmgUP(1);
+                    break;
+
+            }
+            if (enemyName == "B")
             {
                 Instantiate(PassiveItem);
                 Time.timeScale = 0f;
@@ -323,9 +338,9 @@ public class Enemy : MonoBehaviour
 
     void BulletDmgUP(int Up)
     {
-        Bullet bullet = player.GetComponent<Bullet>();
 
-        bullet.dmg += Up;
+        bulletDmg.GetComponent<Bullet>().dmg += Up;
+
     }
    
 }

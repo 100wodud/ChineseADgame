@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
 {
     public int dmg;
     public bool isRotate;
-
+    
     void Update()
     {
         if (isRotate)

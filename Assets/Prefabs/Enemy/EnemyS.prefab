@@ -343,13 +343,18 @@ MonoBehaviour:
   - {fileID: 4326287474489854147, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   maxShotDelay: 2
   curShotDelay: 1
+  PassiveItem: {fileID: 0}
   bulletObjA: {fileID: 6548206371846536784, guid: 3a508333988783e459d4289234dfb26c, type: 3}
   bulletObjB: {fileID: 6548206371846536784, guid: d94aa3eb5b2160e4d8d8392309b5be8e, type: 3}
   player: {fileID: 0}
+  bulletDmg: {fileID: 6548206371846536784, guid: 381e654e284aa584d9f7b0ff8428c51a, type: 3}
   objectManager: {fileID: 0}
   statsModifier:
   - statsChangeType: 0
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 11400000, guid: dd502b9270ddf5448b69c222b35ad97b, type: 2}
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
   CurrentHpTxt: {fileID: 6349872110645902735}
