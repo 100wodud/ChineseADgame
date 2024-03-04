@@ -82,8 +82,11 @@ public class Enemy : MonoBehaviour
         if (enemyName == "B")
             return;
 
-        Fire();
-        Reload();
+        if(level > 1)
+        {
+            Fire();
+            Reload();
+        }
     }
     void Think()
     {
