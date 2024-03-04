@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
             case "B":
                 health = 3000 * level;
                 CurrentHpTxt.text = health.ToString();
+                Invoke("Think", 2);
                 break;
             case "L":
                 health = 600 * level;
@@ -73,16 +74,6 @@ public class Enemy : MonoBehaviour
 
         }
     }
-    void Stop()
-    {
-        if (!gameObject.activeSelf)
-            return;
-
-        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-        rigid.velocity = Vector2.zero;
-
-        Invoke("Think", 2);
-    }
 
     private void Update()
     {
@@ -94,6 +85,11 @@ public class Enemy : MonoBehaviour
     }
     void Think()
     {
+        if (!gameObject.activeSelf)
+            return;
+
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+
         patternIndex = patternIndex == 3 ? 0 : patternIndex + 1;
         curPatternCount = 0;
 
